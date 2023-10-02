@@ -1,9 +1,9 @@
 import "strconv"
+
 func fizzBuzz(n int) []string {
   result := make([]string, 0)
   
   for i := 1; i <= n; i++ {
-
     if i % 3 == 0 && i % 5 == 0 {
       result = append(result, "FizzBuzz") 
     } else if i % 3 == 0 {
