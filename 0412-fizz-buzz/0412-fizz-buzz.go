@@ -1,23 +1,18 @@
 import "strconv"
-func fizzBuzz(n int) []string { 
-  var result []string;
+func fizzBuzz(n int) []string {
+  result := make([]string, 0)
   
   for i := 1; i <= n; i++ {
-    var num string 
-
-    if i % 3 == 0 {
-      num = "Fizz"
-    } else if i % 5 == 0 {
-      num = "Buzz"
-    } else {
-      num = strconv.Itoa(i)
-    }
 
     if i % 3 == 0 && i % 5 == 0 {
-      num = "FizzBuzz"
+      result = append(result, "FizzBuzz") 
+    } else if i % 3 == 0 {
+      result = append(result, "Fizz")
+    } else if i % 5 == 0 {
+      result = append(result, "Buzz")
+    } else {
+      result = append(result, strconv.Itoa(i))
     }
-
-    result = append(result, num)
   }  
 
   return result
