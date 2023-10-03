@@ -6,10 +6,9 @@
  * }
  */
  import (
-
- "fmt"
-//  "math"
- )
+    "fmt"
+     "math"     
+ )  
 
 func middleNode(head *ListNode) *ListNode {
     n  := head 
@@ -20,7 +19,6 @@ func middleNode(head *ListNode) *ListNode {
     }
 
     quot := int(math.Ceil(float64(nodeLen)/2))
-
     var result *ListNode = head
     nodeLen = 1
     for result != nil {
