@@ -6,6 +6,7 @@ import (
 
 
 func canConstruct(ransomNote string, magazine string) bool {
+    // runtime 7ms , memory 3.85mb
     for _, v := range ransomNote {
         if strings.Count(ransomNote, string(v)) > strings.Count(magazine, string(v))  {
             return false
