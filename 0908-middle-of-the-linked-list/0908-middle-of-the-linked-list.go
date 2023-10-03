@@ -9,8 +9,18 @@
     "fmt"
     "math"     
  )  
-
 func middleNode(head *ListNode) *ListNode {
+    slow, fast := head, head
+
+    for fast != nil && fast.Next != nil {
+        slow = slow.Next
+        fast = fast.Next.Next
+    }
+    return slow
+}
+
+
+func middleNode1(head *ListNode) *ListNode {
     n  := head 
     nodeLen := 1
     for n != nil {
