@@ -4,13 +4,17 @@ func isAnagram(s string, t string) bool {
         return false
     }
 
-    result := true
-    for i := 0; i < len(t); i++ {
-        ch := string(t[i])
-        if strings.Count(s, ch) != strings.Count(t, ch) {
-            result = false
-            break
-        } 
+    count := make([]int, 26) // lowerase alphabet count 
+    for _, ch := range s {
+        count[int(ch - 'a')]++
     }
-    return result
+
+    for _, ch := range t {
+        i := int(ch - 'a') 
+        count[i]--
+        if count[i] < 0 {
+            return false
+        }
+    }
+    return true
 }
