@@ -3,7 +3,6 @@ func maxProfit(prices []int) int {
     minPrice := prices[0]
 
     for i := 1; i < len(prices); i += 1 {
-
         if prices[i] < minPrice {
             minPrice = prices[i]
         } else if profit < prices[i] - minPrice{
@@ -12,6 +11,7 @@ func maxProfit(prices []int) int {
     }
     return profit
 
+    // worst anwser
     // myProfit := 0 
     // for i, j := 0, 1; i < len(prices); i, j = i+1, i+2 {
     //     for j < len(prices) {
