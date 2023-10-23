@@ -1,15 +1,12 @@
 func maxProfit(prices []int) int {
     profit := 0 
-    boughtPrice := -1
     hasStock := false
-    fmt.Println(prices ,len(prices))
+    boughtPrice := 0
     for day, price := range prices {
         // when end of days
         if hasStock && boughtPrice < price  {
             profit += price
-            boughtPrice = -1
             hasStock = false
-            fmt.Println("sell", day, price, profit)
         }
 
         if day == len(prices)-1 && !hasStock {
@@ -20,7 +17,6 @@ func maxProfit(prices []int) int {
             profit -= price
             boughtPrice = price
             hasStock = true
-            fmt.Println("buy", day, price, profit)
         }
     }
     return profit
