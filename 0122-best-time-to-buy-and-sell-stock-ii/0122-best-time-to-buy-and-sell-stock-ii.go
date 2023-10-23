@@ -1,8 +1,4 @@
 func maxProfit(prices []int) int {
-
-// 0 1 2 
-//[7,1,5]
-
     profit := 0 
     boughtPrice := -1
     hasStock := false
