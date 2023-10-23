@@ -14,8 +14,9 @@ func maxProfit(prices []int) int {
         if day == len(prices)-1 && !hasStock {
             continue
         }
+        
         // buy
-        if  !hasStock && price < prices[day+1] {
+        if !hasStock && price < prices[day+1] {
             profit -= price
             boughtPrice = price
             hasStock = true
